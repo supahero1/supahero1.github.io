@@ -1,25 +1,24 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Flesto | Docs</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
   </head>
   <body>
     <section id="top-bar">
       <table>
         <tr>
           <th>
-            <img src="icon.png" width="32" height="32">
+            <img src="/icon.png" width="32" height="32">
           </th>
           <th>
             <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
           </th>
           <th id="title">Flesto</th>
           <th>
-            <a id="home" class="noul" href="./">Home</a>
+            <a id="home" class="noul" href="/">Home</a>
           </th>
         </tr>
       </table>
@@ -27,11 +26,11 @@
     <section id="page">
       <div>
         <h1 id="Contents" class="al">Contents</h1>
-        <h3>1. <a class="ul" href="docs/flesto/#Description">Description</a></h3>
-        <h3>2. <a class="ul" href="docs/flesto/#Assessment">Assessment</a></h3>
-        <h3>3. <a class="ul" href="docs/flesto/#Specification">Specification</a></h3>
-        <h3>4. <a class="ul" href="docs/flesto/#Trivia">Trivia</a></h3>
-        <h3>5. <a class="ul" href="docs/flesto/#Documentation">Documentation</a></h3>
+        <h3>1. <a class="ul" href="/docs/flesto/#Description">Description</a></h3>
+        <h3>2. <a class="ul" href="/docs/flesto/#Assessment">Assessment</a></h3>
+        <h3>3. <a class="ul" href="/docs/flesto/#Specification">Specification</a></h3>
+        <h3>4. <a class="ul" href="/docs/flesto/#Trivia">Trivia</a></h3>
+        <h3>5. <a class="ul" href="/docs/flesto/#Documentation">Documentation</a></h3>
         <hr>
         <h1 id="Description" class="al">1. Description</h1>
         <h3>Flesto was created to manage big chunks of memory that can chaotically change in short amount of time. In order to minimize the effect of <span>realloc</span> copying data from one place to another, space is divided into chunks. Think about flesto as something in between a linked list and an array.</h3>
@@ -72,7 +71,7 @@ PART 2 - 16 bytes
 PART 3 - 5 bytes
 </pre>
         <h3>The array of parts is the only piece within flesto that will require <span>realloc</span>. To not make the array too big and cause <span>realloc</span> to potentially become a bottleneck, a perfect size for parts should be measured and used.</h3>
-        <h3>Even part sizes can sometimes create problems - look <a class="dark" href="docs/flesto/#Trivia">trivia</a>.</h3>
+        <h3>Even part sizes can sometimes create problems - look <a class="dark" href="/docs/flesto/#Trivia">trivia</a>.</h3>
         <h3>Lastly, flesto is defined as the following:</h3>
         <pre class="code">
 struct flesto {
@@ -88,7 +87,7 @@ struct flesto {
   /* default value of maximum size of a part */
   unsigned long <i>default_max_capacity</i>;
   
-  /* look <a href="docs/flesto/#Trivia">trivia</a> - fix no. 2 (<a href="docs/flesto/flesto_delete_after">flesto_delete_after()</a>) */
+  /* look <a href="/docs/flesto/#Trivia">trivia</a> - fix no. 2 (<a href="/docs/flesto/flesto_delete_after">flesto_delete_after()</a>) */
   unsigned long <i>delete_after</i>;
 };
 </pre>
@@ -105,35 +104,35 @@ struct flesto {
         <h3>These functions are not thread-safe. If you need to run them in a multi-threaded environment, consider using a <a class="dark" href="/docs/mufex">mufex</a>.</h3>
         
         <h2>Initialization and destruction</h2>
-        <h3 class="lm"><a href="docs/flesto/flesto">flesto</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_free">flesto_free</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto">flesto</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_free">flesto_free</a></h3>
         
         <h2>Adding data</h2>
-        <h3 class="lm"><a href="docs/flesto/flesto_resize">flesto_resize</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_add_part">flesto_add_part</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_add_parts">flesto_add_parts</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_add_item">flesto_add_item</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_add_items">flesto_add_items</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_resize">flesto_resize</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_add_part">flesto_add_part</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_add_parts">flesto_add_parts</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_add_item">flesto_add_item</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_add_items">flesto_add_items</a></h3>
         
         <h2>Removing data</h2>
-        <h3 class="lm"><a href="docs/flesto/flesto_remove_empty_parts">flesto_remove_empty_parts</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_remove_item">flesto_remove_item</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_remove_items">flesto_remove_items</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_pop">flesto_pop</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_delete_after">flesto_delete_after</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_remove_empty_parts">flesto_remove_empty_parts</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_remove_item">flesto_remove_item</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_remove_items">flesto_remove_items</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_pop">flesto_pop</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_delete_after">flesto_delete_after</a></h3>
         
         <h2>Miscellaneous</h2>
-        <h3 class="lm"><a href="docs/flesto/flesto_trailing_items">flesto_trailing_items</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_idx_to_ptr">flesto_idx_to_ptr</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_ptr_to_idx">flesto_ptr_to_idx</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_copy_items">flesto_copy_items</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_amount_of_items">flesto_amount_of_items</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_trailing_items">flesto_trailing_items</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_idx_to_ptr">flesto_idx_to_ptr</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_ptr_to_idx">flesto_ptr_to_idx</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_copy_items">flesto_copy_items</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_amount_of_items">flesto_amount_of_items</a></h3>
         
         <h2>Safety</h2>
-        <h3 class="lm"><a href="docs/flesto/flesto_check_address">flesto_check_address</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_check_address1">flesto_check_address1</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_check_address2">flesto_check_address2</a></h3>
-        <h3 class="lm"><a href="docs/flesto/flesto_check_address3">flesto_check_address3</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_check_address">flesto_check_address</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_check_address1">flesto_check_address1</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_check_address2">flesto_check_address2</a></h3>
+        <h3 class="lm"><a href="/docs/flesto/flesto_check_address3">flesto_check_address3</a></h3>
       </div>
     </section>
   </body>

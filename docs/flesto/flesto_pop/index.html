@@ -4,8 +4,8 @@
     <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>flesto_pop() | Docs</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
   </head>
   <body>
     <section id="top-bar">
@@ -19,7 +19,7 @@
           </th>
           <th id="title">flesto_pop()</th>
           <th>
-            <a id="home" class="noul" href="./">Home</a>
+            <a id="home" class="noul" href="/">Home</a>
           </th>
         </tr>
       </table>
@@ -35,8 +35,8 @@ void flesto_pop(struct flesto* <i>flesto</i>, unsigned long <i>amount</i>);
         <hr>
         <h1 id="Description" class="al">Description</h1>
         <h3>The <i>flesto_pop()</i> function shall adjust the <i>flesto</i> so that <i>amount</i> bytes, counting from the end, are deleted.</h3>
-        <h3>If you need to delete data from elsewhere than the end of the <i>flesto</i>, see <a class="dark" href="docs/flesto/flesto_remove_items">flesto_remove_items()</a>.</h3>
-        <h3>This function only adjusts capacities of parts and the <span><i>flesto</i>->last_part</span> property. It will not remove empty parts. If you need to do so, see <a class="dark" href="docs/flesto/flesto_remove_empty_parts">flesto_remove_empty_parts()</a>.</h3>
+        <h3>If you need to delete data from elsewhere than the end of the <i>flesto</i>, see <a class="dark" href="/docs/flesto/flesto_remove_items">flesto_remove_items()</a>.</h3>
+        <h3>This function only adjusts capacities of parts and the <span><i>flesto</i>->last_part</span> property. It will not remove empty parts. If you need to do so, see <a class="dark" href="/docs/flesto/flesto_remove_empty_parts">flesto_remove_empty_parts()</a>.</h3>
         <h3>This function shall not fail if <i>amount</i> is greater than the total amount of bytes the <i>flesto</i> houses - it will stop when <span><i>flesto</i>->last_part</span> is detected to be 0 and there are more bytes to delete.</h3>
         <hr>
         <h1 id="Return_value" class="al">Return value</h1>

@@ -4,8 +4,8 @@
     <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>flesto_delete_after() | Docs</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
   </head>
   <body>
     <section id="top-bar">
@@ -19,7 +19,7 @@
           </th>
           <th id="title">flesto_delete_after()</th>
           <th>
-            <a id="home" class="noul" href="./">Home</a>
+            <a id="home" class="noul" href="/">Home</a>
           </th>
         </tr>
       </table>
@@ -35,7 +35,7 @@ int flesto_delete_after(struct flesto* <i>flesto</i>);
         <hr>
         <h1 id="Description" class="al">Description</h1>
         <h3>The <i>flesto_delete_after()</i> function shall determine if there is an unused part after the last part of the <i>flesto</i>. If there is, <i>flesto_delete_after()</i> shall then calculate how much free space the last part has (<span>last_part.max_capacity</span> - <span>last_part.capacity</span>). If the amount is greater or equal to the <span><i>flesto</i>->delete_after</span> property, the unused part after the last part is removed from the <i>flesto</i> and the array of parts is shrunk by 1.</h3>
-        <h3>This might be helpful in situation like described in the <a class="dark" href="docs/flesto/#Trivia">trivia</a> section of the <span>flesto</span> documentation. By increasing the window of potential data changes, parts will not be potentially freed and allocated constantly, which could otherwise become a bottleneck.</h3>
+        <h3>This might be helpful in situation like described in the <a class="dark" href="/docs/flesto/#Trivia">trivia</a> section of the <span>flesto</span> documentation. By increasing the window of potential data changes, parts will not be potentially freed and allocated constantly, which could otherwise become a bottleneck.</h3>
         <h3>Benchmark your application before picking a value for <span><i>flesto</i>->delete_after</span> for maximum efficiency.</h3>
         <hr>
         <h1 id="Return_value" class="al">Return value</h1>

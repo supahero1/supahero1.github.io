@@ -4,8 +4,8 @@
     <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>flesto_add_items() | Docs</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
   </head>
   <body>
     <section id="top-bar">
@@ -19,7 +19,7 @@
           </th>
           <th id="title">flesto_add_items()</th>
           <th>
-            <a id="home" class="noul" href="./">Home</a>
+            <a id="home" class="noul" href="/">Home</a>
           </th>
         </tr>
       </table>
@@ -36,12 +36,12 @@ int flesto_add_items(struct flesto* <i>flesto</i>, const void* <i>items</i>,
 </pre>
         <hr>
         <h1 id="Description" class="al">Description</h1>
-        <h3>See <a class="dark" href="docs/flesto/flesto_add_item">flesto_add_item()</a>.</h3>
-        <h3>The <i>flesto_add_items()</i> function shall copy <i>amount_of_items</i> * <i>item_size</i> bytes from <i>items</i> to the end of <i>flesto</i>'s last part. If necessary, it will add one or more parts using <a class="dark" href="docs/flesto/flesto_resize">flesto_resize()</a></h3>
+        <h3>See <a class="dark" href="/docs/flesto/flesto_add_item">flesto_add_item()</a>.</h3>
+        <h3>The <i>flesto_add_items()</i> function shall copy <i>amount_of_items</i> * <i>item_size</i> bytes from <i>items</i> to the end of <i>flesto</i>'s last part. If necessary, it will add one or more parts using <a class="dark" href="/docs/flesto/flesto_resize">flesto_resize()</a></h3>
         <h3>If the last part has free space, but which is less than the requested <i>item_size</i>, it will skip that free space. If the user knows this can occur, the part's contents may be resized to fit its capacity in order to preserve memory after this function returns. However, it is up to the user to find one or more of such parts, because after this function returns, the amount of parts might increase by more than 1.</h3>
         <h3>If there is an empty part after the last part, and the last part does not satisfy the memory needs, the empty part will be used and marked as the new last part.</h3>
         <h3><i>item_size</i> must be smaller than a part's size, else it results in undefined behavior.</h3>
-        <h3>To add only one item, use <a class="dark" href="docs/flesto/flesto_add_item">flesto_add_item()</a>.</h3>
+        <h3>To add only one item, use <a class="dark" href="/docs/flesto/flesto_add_item">flesto_add_item()</a>.</h3>
         <hr>
         <h1 id="Return_value" class="al">Return value</h1>
         <h3><i>flesto_add_items()</i> returns <span>flesto_success</span> on success, otherwise one of the error codes.</h3>
