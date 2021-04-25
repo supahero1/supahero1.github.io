@@ -57,7 +57,8 @@
         <h3>In the root folder (with <span>Makefile</span> in it), execute the following:</h3>
         <code>make build</code>
         <h3>The object files will be in a folder called <span>build</span>.</h3>
-        <h3>If you want to run the library on an embedded system and need to compile using <span class="boxed">-Os</span>, or need to customize the compiling options for other reasons, include <span class="boxed">CMPE=your_options</span> in your <span>make</span> command. If <span class="boxed">your_options</span> starts with a dash at the beginning (no matter if it is preceeded by whitespace), <span class="dark">do not include the dash</span>.</h3>
+        <h3>If you want to run the library on an embedded system and need to compile using <span class="boxed">-Os</span>, or need to customize the compiling options for other reasons, include <span class="boxed">CMPE=your_options</span> in your <span>make</span> command. If <span class="boxed">your_options</span> starts with a dash at the beginning (no matter if it is preceeded by whitespace), <span class="dark">do not include the dash</span>. For example:</h3>
+        <code>make build CMPE="Os -pedantic_errors"</code>
         
         <h1 id="Static_library" class="al">3.1. Static library</h1>
         <h3>Execute the following:</h3>
