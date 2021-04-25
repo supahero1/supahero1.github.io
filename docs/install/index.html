@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Installation</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
   </head>
   <body>
     <section id="top-bar">
@@ -19,7 +18,7 @@
           </th>
           <th id="title">Installation</th>
           <th>
-            <a id="home" class="noul" href="./">Home</a>
+            <a id="home" class="noul" href="/">Home</a>
           </th>
         </tr>
       </table>
@@ -27,22 +26,22 @@
     <section id="page">
       <div>
         <h1 id="Contents" class="al">Contents</h1>
-        <h3>1. <a class="ul" href="docs/install/#Requirements">Requirements</a></h3>
-        <h3>2. <a class="ul" href="docs/install/#Getting_the_source_code">Getting the source code</a></h3>
-        <h3>3. <a class="ul" href="docs/install/#Building">Building</a></h3>
-        <h3>&nbsp&nbsp3.1. <a class="ul" href="docs/install/#Static_library">Static library</a></h3>
-        <h3>&nbsp&nbsp3.2. <a class="ul" href="docs/install/#Dynamic_library">Dynamic library</a></h3>
-        <h3>4. <a class="ul" href="docs/install/#Cleaning_after_building">Cleaning after building</a></h3>
-        <h3>5. <a class="ul" href="docs/install/#Uninstalling">Uninstalling</a></h3>
-        <h3>6. <a class="ul" href="docs/install/#Chaining_commands">Chaining commands</a></h3>
-        <h3>7. <a class="ul" href="docs/install/#Testing">Testing</a></h3>
-        <h3>8. <a class="ul" href="docs/install/#Contributing">Contributing</a></h3>
+        <h3>1. <a class="ul" href="/docs/install/#Requirements">Requirements</a></h3>
+        <h3>2. <a class="ul" href="/docs/install/#Getting_the_source_code">Getting the source code</a></h3>
+        <h3>3. <a class="ul" href="/docs/install/#Building">Building</a></h3>
+        <h3>&nbsp&nbsp3.1. <a class="ul" href="/docs/install/#Static_library">Static library</a></h3>
+        <h3>&nbsp&nbsp3.2. <a class="ul" href="/docs/install/#Dynamic_library">Dynamic library</a></h3>
+        <h3>4. <a class="ul" href="/docs/install/#Cleaning_after_building">Cleaning after building</a></h3>
+        <h3>5. <a class="ul" href="/docs/install/#Uninstalling">Uninstalling</a></h3>
+        <h3>6. <a class="ul" href="/docs/install/#Chaining_commands">Chaining commands</a></h3>
+        <h3>7. <a class="ul" href="/docs/install/#Testing">Testing</a></h3>
+        <h3>8. <a class="ul" href="/docs/install/#Contributing">Contributing</a></h3>
         <hr>
         <h1 id="Requirements" class="al">1. Requirements</h1>
         <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/">GCC compiler</a></h3>
         <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/POSIX#POSIX-oriented_operating_systems">POSIX-compliant system</a><sup class="tiny dark">[1]</sup></h3>
         <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://www.gnu.org/software/make/">GNU Make</a></h3>
-        <h3 class="tiny">[1] A few components might not require POSIX functions, such as <a href="docs/flesto" class="tiny dark">flesto</a></h3>
+        <h3 class="tiny">[1] A few components might not require POSIX functions, such as <a href="/docs/flesto" class="tiny dark">flesto</a></h3>
         <h3>You can test for <span class="dark">GCC</span> and <span class="dark">GNU Make</span> by typing in your terminal respectively <span class="boxed">gcc</span> and <span class="boxed">make</span>. The expected output of <span class="boxed">gcc</span> should be <span class="boxed">gcc: fatal error: no input files</span>. If the output is <span class="boxed">clang: error: no input files</span>, you either need to check your <span class="boxed">/usr/bin</span> folder for the existence of a working <span class="dark">GCC</span> compiler, or <a class="dark" target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=install+gcc+on+my+system">install it</a>. If you are really desperate, you can also try <a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/install/">building it</a> (but it takes hours).</h3>
         <hr>
         <h1 id="Getting_the_source_code" class="al">2. Getting the source code</h1>
@@ -64,7 +63,7 @@
         <code>sudo make static</code>
         <h3>Doing <span class="boxed">make build</span> beforehand is not necessary.</h3>
         <h3>The library file will be in the <span>build</span> folder, but will also be copied to <span class="boxed">/usr/lib/</span> and <span class="boxed">/usr/local/lib/</span>. Additionally, header files will be copied to <span class="boxed">/usr/include/</span> and <span class="boxed">/usr/local/include/</span>.</h3>
-        <h3>To use the library, add a <span class="boxed">-lshnet</span> flag to your linker. See <a href="docs" class="dark">the documentation</a> to know what header files to include.</h3>
+        <h3>To use the library, add a <span class="boxed">-lshnet</span> flag to your linker. See <a href="/docs" class="dark">the documentation</a> to know what header files to include.</h3>
         <h3>If you do not have admin permissions to use <span>sudo</span>, use:</h3>
         <code>make strip-static</code>
         <h3>No files will be copied to system folders for GCC to look for. Instead, in the root directory, a folder called <span class="boxed">shnet</span> will be created. It will hold header files and the library file (either static or dynamic). Use the <span class="boxed">-L</span> linker option to tell GCC where to look for the library file, and use <span class="boxed">#include "shnet/header_name"</span> to include the revelant header files.</h3>
@@ -73,10 +72,10 @@
         <h1 id="Dynamic_library" class="al">3.2. Dynamic library</h1>
         <h3>Execute the following:</h3>
         <code>sudo make dynamic</code>
-        <h3>The outcome is identical to mentioned above <a class="dark" href="docs/install/#Static_library">static library building</a>.</h3>
+        <h3>The outcome is identical to mentioned above <a class="dark" href="/docs/install/#Static_library">static library building</a>.</h3>
         <h3>If you do not have admin permissions to use <span>sudo</span>, use:</h3>
         <code>make strip-dynamic</code>
-        <h3>Look above (<a class="dark" href="docs/install/#Static_library">static library building</a>) for more information.</h3>
+        <h3>Look above (<a class="dark" href="/docs/install/#Static_library">static library building</a>) for more information.</h3>
         <hr>
         <h1 id="Cleaning_after_building" class="al">4. Cleaning after building</h1>
         <h3>Execute the following:</h3>
