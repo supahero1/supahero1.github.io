@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Installation</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">Installation</th>
+          <th>
+            <a id="home" class="noul" href="./">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Contents" class="al">Contents</h1>
+        <h3>1. <a class="ul" href="docs/install/#Requirements">Requirements</a></h3>
+        <h3>2. <a class="ul" href="docs/install/#Getting_the_source_code">Getting the source code</a></h3>
+        <h3>3. <a class="ul" href="docs/install/#Building">Building</a></h3>
+        <h3>&nbsp&nbsp3.1. <a class="ul" href="docs/install/#Static_library">Static library</a></h3>
+        <h3>&nbsp&nbsp3.2. <a class="ul" href="docs/install/#Dynamic_library">Dynamic library</a></h3>
+        <h3>4. <a class="ul" href="docs/install/#Cleaning_after_building">Cleaning after building</a></h3>
+        <h3>5. <a class="ul" href="docs/install/#Uninstalling">Uninstalling</a></h3>
+        <h3>6. <a class="ul" href="docs/install/#Chaining_commands">Chaining commands</a></h3>
+        <h3>7. <a class="ul" href="docs/install/#Testing">Testing</a></h3>
+        <h3>8. <a class="ul" href="docs/install/#Contributing">Contributing</a></h3>
+        <hr>
+        <h1 id="Requirements" class="al">1. Requirements</h1>
+        <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/">GCC compiler</a></h3>
+        <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/POSIX#POSIX-oriented_operating_systems">POSIX-compliant system</a><sup class="tiny dark">[1]</sup></h3>
+        <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://www.gnu.org/software/make/">GNU Make</a></h3>
+        <h3 class="tiny">[1] A few components might not require POSIX functions, such as <a href="docs/flesto" class="tiny dark">flesto</a></h3>
+        <h3>You can test for <span class="dark">GCC</span> and <span class="dark">GNU Make</span> by typing in your terminal respectively <span class="boxed">gcc</span> and <span class="boxed">make</span>. The expected output of <span class="boxed">gcc</span> should be <span class="boxed">gcc: fatal error: no input files</span>. If the output is <span class="boxed">clang: error: no input files</span>, you either need to check your <span class="boxed">/usr/bin</span> folder for the existence of a working <span class="dark">GCC</span> compiler, or <a class="dark" target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=install+gcc+on+my+system">install it</a>. If you are really desperate, you can also try <a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/install/">building it</a> (but it takes hours).</h3>
+        <hr>
+        <h1 id="Getting_the_source_code" class="al">2. Getting the source code</h1>
+        <h2>Using <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com">git</a>:</h2>
+        <h3><a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Cd_(command)">CD</a> into any folder you like. Then, execute the following:</h3>
+        <code>git clone https://github.com/supahero1/shnet</code>
+        <h3>The source code will be saved to a folder called <span>shnet</span>.</h3>
+        
+        <h2>Manual download:</h2>
+        <h3>Go to <a class="dark" target="_blank" rel="noopener noreferrer" href="https://github.com/supahero1/net">the GitHub repository</a> and save the code.</h3>
+        <hr>
+        <h1 id="Building" class="al">3. Building</h1>
+        <h3>In the root folder (with <span>Makefile</span> in it), execute the following:</h3>
+        <code>make build</code>
+        <h3>The object files will be in a folder called <span>build</span>.</h3>
+        
+        <h1 id="Static_library" class="al">3.1. Static library</h1>
+        <h3>Execute the following:</h3>
+        <code>sudo make static</code>
+        <h3>Doing <span class="boxed">make build</span> beforehand is not necessary.</h3>
+        <h3>The library file will be in the <span>build</span> folder, but will also be copied to <span class="boxed">/usr/lib/</span> and <span class="boxed">/usr/local/lib/</span>. Additionally, header files will be copied to <span class="boxed">/usr/include/</span> and <span class="boxed">/usr/local/include/</span>.</h3>
+        <h3>To use the library, add a <span class="boxed">-lshnet</span> flag to your linker. See <a href="docs" class="dark">the documentation</a> to know what header files to include.</h3>
+        <h3>If you do not have admin permissions to use <span>sudo</span>, use:</h3>
+        <code>make strip-static</code>
+        <h3>No files will be copied to system folders for GCC to look for. Instead, in the root directory, a folder called <span class="boxed">shnet</span> will be created. It will hold header files and the library file (either static or dynamic). Use the <span class="boxed">-L</span> linker option to tell GCC where to look for the library file, and use <span class="boxed">#include "shnet/header_name"</span> to include the revelant header files.</h3>
+        <h3>This way, if you need to switch between system and local files, all you need to do is swap <span class="boxed">#include &lt;shnet/header_name></span> with <span class="boxed">#include "shnet/header_name"</span>.</h3>
+        
+        <h1 id="Dynamic_library" class="al">3.2. Dynamic library</h1>
+        <h3>Execute the following:</h3>
+        <code>sudo make dynamic</code>
+        <h3>The outcome is identical to mentioned above <a class="dark" href="docs/install/#Static_library">static library building</a>.</h3>
+        <h3>If you do not have admin permissions to use <span>sudo</span>, use:</h3>
+        <code>make strip-dynamic</code>
+        <h3>Look above (<a class="dark" href="docs/install/#Static_library">static library building</a>) for more information.</h3>
+        <hr>
+        <h1 id="Cleaning_after_building" class="al">4. Cleaning after building</h1>
+        <h3>Execute the following:</h3>
+        <code>make clean</code>
+        <h3>Object files, library files, test logs and test executables will be removed. It shall not affect the overall installation.</h3>
+        <hr>
+        <h1 id="Uninstalling" class="al">5. Uninstalling</h1>
+        <h3>Execute the following:</h3>
+        <code>sudo make uninstall</code>
+        <h3>Headers and library files will be removed from system directories. Note that this command only makes sense if you had built either static or dynamic library.</h3>
+        <h3>Uninstalling sudo-less installation (the <span>strip-</span> prefix) simply removes the <span>shnet</span> folder.</h3>
+        <hr>
+        <h1 id="Chaining_commands" class="al">6. Chaining commands</h1>
+        <h3>You can chain the makefile commands:</h3>
+        <code>sudo make clean uninstall static</code>
+        <h3>The above command will first clean the old files, then uninstall the library (if it was previously installed), and then build and install the static library.</h3>
+        <h3>There is one limitation to this method - you cannot use a keyword more than once. This is invalid:</h3>
+        <code>sudo make clean uninstall static clean uninstall dynamic</code>
+        <h3>The second time <span>clean</span> or <span>uninstall</span> get executed, make will report "nothing to do".</h3>
+        <hr>
+        <h1 id="Testing" class="al">7. Testing</h1>
+        <h3>Before using the library, you can test its components:</h3>
+        <code>make test</code>
+        <h3>In case of a test failure, more information can be found at the generated <span>logs.txt</span> file in the root folder.</h3>
+        <h3>In order to make sure that the failure was not caused by random events, such as system calls returning an error caused not by the test suites, it is recommended to run tests again. The old <span>logs.txt</span> file will not be deleted.</h3>
+        <hr>
+        <h1 id="Contributing" class="al">8. Contributing</h1>
+        <h3>If you find any bugs, typos, would like to suggest something or would like to help with the project, feel free to <a class="dark" target="_blank" rel="noopener noreferrer" href="https://github.com/supahero1/shnet/issues">submit an issue</a>.</h3>
+      </div>
+    </section>
+  </body>
+</html>

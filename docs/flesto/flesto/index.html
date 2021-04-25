@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>flesto() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">flesto()</th>
+          <th>
+            <a id="home" class="noul" href="./">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/flesto.h>
+
+<a href="docs/flesto/#Specification">struct flesto</a> flesto(unsigned long <i>default_max_capacity</i>,
+                     unsigned long <i>delete_after</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>The <i>flesto()</i> function shall return a <span>struct flesto</span> prefilled with default values and those given by the user:</h3>
+        <pre class="code">
+struct flesto {
+  struct flesto_part* parts = NULL,
+  unsigned long last_part = 0,
+  unsigned long max_amount_of_parts = 0,
+  unsigned long default_max_capacity = <i>default_max_capacity</i>,
+  unsigned long delete_after = <i>delete_after</i>
+};
+</pre>
+      <h3>The user may omit this function and create the struct by themselves.</h3>
+      <hr>
+      <h1 id="Return_value" class="al">Return value</h1>
+      <h3>This function returns a filled <span>struct flesto</span>.</h3>
+      </div>
+    </section>
+  </body>
+</html>

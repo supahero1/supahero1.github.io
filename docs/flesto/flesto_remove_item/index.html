@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>flesto_remove_item() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">flesto_remove_item()</th>
+          <th>
+            <a id="home" class="noul" href="./">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/flesto.h>
+
+void flesto_remove_item(struct flesto* <i>flesto</i>, void* <i>item</i>,
+                        unsigned long <i>item_size</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>The <i>flesto_remove_item()</i> function shall remove the item under specified address <i>item</i> from the given <i>flesto</i>. That might happen in 2 ways:</h3>
+        <h3>1. <i>item</i> is the last item of the <i>flesto</i>, nothing happens</h3>
+        <h3>2. <i>item</i> is not the last item of the <i>flesto</i>, so the last item is copied to <i>item</i> using <span>memcpy()</span></h3>
+        <h3>The last part is then adjusted by <i>item_size</i>.</h3>
+        <h3>If the last part's capacity ends up being 0, and the last part is not the only part, <span><i>flesto</i>->last_part</span> is decreased by 1. The old last part is not freed.</h3>
+        <h3>Copying is used to disallow gaps in flesto. With time, such gaps could potentially grow to large regions of unused memory. This also means all the items must be of the same size. If they are not, and the <i>item</i> is not the last item of the <i>flesto</i>, it results in undefined behavior.</h3>
+        <h3><i>item_size</i> must be smaller than a part's size, else it results in undefined behavior.</h3>
+        <h3>If you have the item's index instead of its address, use <a class="dark" href="docs/flesto/flesto_idx_to_ptr">flesto_idx_to_ptr()</a> to convert it to a pointer.</h3>
+        <h3>Error checking for the <i>item</i> is not performed. If it is not a valid address or does not belong to the <i>flesto</i>, the resulting behavior is undefined. Use <a class="dark" href="docs/flesto/flesto_check_address">flesto_check_address()</a> to make sure the pointer belongs to the <i>flesto</i>.</h3>
+        <h3>To remove multiple items at the same time, see <a class="dark" href="docs/flesto/flesto_remove_items">flesto_remove_items()</a>.</h3>
+        <hr>
+        <h1 id="Return_value" class="al">Return value</h1>
+        <h3><i>flesto_remove_item()</i> returns <span>flesto_success</span> on success, otherwise one of the error codes.</h3>
+        <hr>
+        <h1 id="Errors" class="al">Errors</h1>
+        <h3><span>flesto_out_of_memory</span> - an out of memory error has occured</h3>
+      </div>
+    </section>
+  </body>
+</html>

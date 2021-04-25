@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>flesto_remove_items() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">flesto_remove_items()</th>
+          <th>
+            <a id="home" class="noul" href="./">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/flesto.h>
+
+void flesto_remove_items(struct flesto* <i>flesto</i>, void* <i>items</i>,
+                         unsigned long <i>part</i>, unsigned long <i>offset</i>,
+                         unsigned long <i>amount_of_items</i>,
+                         unsigned long <i>item_size</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>See <a class="dark" href="docs/flesto/flesto_remove_item">flesto_remove_item()</a> if you want to remove only one item, or for reference. <i>flesto_remove_items()</i> matches the entire description of <i>flesto_remove_item()</i> if not stated otherwise below.</h3>
+        <h3>The <i>flesto_remove_items()</i> function shall remove the items under specified address <i>items</i> or under specified <i>part</i> and <i>offset</i> from the given <i>flesto</i>. That might happen in 3 ways:</h3>
+        <h3>1. <i>items</i> + <i>amount_of_items</i> * <i>item_size</i> is greater or equal to the last item of the <i>flesto</i>, meaning there are no items to copy:</h3>
+        <pre class="code">
+before:
+==========================================
+|                      | items_to_delete |
+==========================================
+after:
+========================
+|                      |
+========================
+</pre>
+        <h3>2. <i>items</i> + <i>amount_of_items</i> * <i>item_size</i> is less than the last item of the <i>flesto</i>, but <i>items</i> + <i>amount_of_items</i> * <i>item_size</i> * <i>2</i> is greater than the last item of the <i>flesto</i>, meaning the gap can be filled only partially:</h3>
+        <pre class="code">
+before (cp = items_to_copy):
+==========================================
+|                 | items_to_delete | cp |
+==========================================
+after:
+========================
+|                 | cp |
+========================
+</pre>
+        <h3>3. <i>items</i> + <i>amount_of_items</i> * <i>item_size</i> is less than the last item of the <i>flesto</i>, and <i>items</i> + <i>amount_of_items</i> * <i>item_size</i> * <i>2</i> is less or equal to the last item of the <i>flesto</i>, meaning the gap can be fully filled:</h3>
+        <pre class="code">
+before:
+==========================================
+| items_to_delete |    |  items_to_copy  |
+==========================================
+after:
+========================
+|  items_to_copy  |    |
+========================
+</pre>
+        <h3>Error checking for the <i>item</i> is performed only partially. The function will detect if the pointer does not belong to the <i>flesto</i>, but it will not detect if the pointer belongs to the unused space. Use <a class="dark" href="docs/flesto/flesto_check_address">flesto_check_address()</a> to make sure the pointer belongs to the <i>flesto</i>'s used space.</h3>
+        <h3><i>items</i> can be NULL, but then the user must provide valid <i>part</i> and <i>offset</i> arguments, denoting part and offset (index) from the beginning of the part (not the beginning of all the items in the <i>flesto</i>) respectively. These values can be received from the <a class="dark" href="docs/flesto/flesto_ptr_to_idx">flesto_ptr_to_idx()</a> function. If <i>items</i> is not NULL, the other 2 arguments are ignored.</h3>
+        <hr>
+        <h1 id="Return_value" class="al">Return value</h1>
+        <h3><i>flesto_remove_items()</i> returns <span>flesto_success</span> on success, otherwise one of the error codes.</h3>
+        <hr>
+        <h1 id="Errors" class="al">Errors</h1>
+        <h3><span>flesto_out_of_memory</span> - an out of memory error has occured</h3>
+        <h3>If <i>items</i> is not NULL:</h3>
+        <h3><span>flesto_failure</span> - <i>items</i> does not belong to any of the <i>flesto</i>'s parts</h3>
+      </div>
+    </section>
+  </body>
+</html>

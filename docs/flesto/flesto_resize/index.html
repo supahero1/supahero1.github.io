@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="http://127.0.0.1:3000/c/git/supahero1.github.io/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>flesto_resize() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">flesto_resize()</th>
+          <th>
+            <a id="home" class="noul" href="./">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/flesto.h>
+
+int flesto_resize(struct flesto* <i>flesto</i>, unsigned long <i>new_size</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>The <i>flesto_resize()</i> function shall resize given <i>flesto</i>'s array of parts to match the specified size <i>new_size</i>.</h3>
+        <h3>If the array is grown, the new parts will have the size of <span><i>flesto</i>->default_max_capacity</span> and will be empty. Last part's index <span><i>flesto</i>->last_part</span> will remain unchanged.</h3>
+        <h3>If the array is shrunk, parts not fitting the new size will have their contents freed and <span><i>flesto</i>->last_part</span>, if affected by the shrinking, will point to the last part in the flesto.</h3>
+        <h3><i>new_size</i> must be greater than 0, otherwise it results in undefined behavior (use <a class="dark" href="docs/flesto/flesto_free">flesto_free()</a> instead).</h3>
+        <hr>
+        <h1 id="Return_value" class="al">Return value</h1>
+        <h3><i>flesto_resize()</i> returns <span>flesto_success</span> on success, otherwise one of the error codes.</h3>
+        <hr>
+        <h1 id="Errors" class="al">Errors</h1>
+        <h3><span>flesto_out_of_memory</span> - an out of memory error has occured</h3>
+      </div>
+    </section>
+  </body>
+</html>
