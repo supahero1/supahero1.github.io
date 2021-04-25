@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>flesto_add_part() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="/icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">flesto_add_part()</th>
+          <th>
+            <a id="home" class="noul" href="/">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/flesto.h>
+
+int flesto_add_part(struct flesto* <i>flesto</i>, char* <i>contents</i>,
+                    unsigned long <i>max_capacity</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>The <i>flesto_add_part()</i> function shall grow given <i>flesto</i>'s array of parts by 1 and, at the end of the array, create a new part using the <i>contents</i> and <i>max_capacity</i>. The new part shall have no data. Its capacity is set to 0.</h3>
+        <h3>This function is similar to <a class="dark" href="/docs/flesto/flesto_resize">flesto_resize()</a>, but <i>flesto_add_part()</i> allows for any size of the new part.</h3>
+        <h3>Use <a class="dark" href="/docs/flesto/flesto_add_parts">flesto_add_parts()</a> if you need to add multiple parts.</h3>
+        <hr>
+        <h1 id="Return_value" class="al">Return value</h1>
+        <h3><i>flesto_add_part()</i> returns <span>flesto_success</span> on success, otherwise one of the error codes.</h3>
+        <hr>
+        <h1 id="Errors" class="al">Errors</h1>
+        <h3><span>flesto_out_of_memory</span> - an out of memory error has occured while expanding the array of parts</h3>
+        <hr>
+        <h1 id="Examples" class="al">Examples</h1>
+        <h3></h3>
+        <pre class="code">
+struct flesto f = flesto(5, 0);
+
+void* content = malloc(100);
+if(content == NULL) {
+  exit(1);
+}
+
+int err = flesto_add_part(&f, content, 100);
+if(err != flesto_success) {
+  exit(1);
+}
+</pre>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>flesto_copy_items() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="/icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">flesto_copy_items()</th>
+          <th>
+            <a id="home" class="noul" href="/">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/flesto.h>
+
+void
+flesto_copy_items(struct flesto* <i>flesto</i>, unsigned long <i>dest_part</i>,
+                  unsigned long <i>dest_offset</i>, unsigned long <i>src_part</i>,
+                  unsigned long <i>src_offset</i>, unsigned long <i>amount_of_items</i>,
+                  unsigned long <i>item_size</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>The <i>flesto_copy_items()</i> function shall copy <i>amount_of_items</i> items, each of size <i>item_size</i>, from <i>src_part</i> and <i>src_offset</i> to <i>dest_part</i> and <i>dest_offset</i>.</h3>
+        <h3>Due to how flesto operates, <span>memcpy()</span> cannot be used consistently if the <i>amount_of_items</i> exceeds 1.</h3>
+        <h3>This function will skip any insufficient free space at the end of any part encountered on its copying path, just like <a class="dark" href="/docs/flesto/flesto_add_item">flesto_add_item()</a>.</h3>
+        <h3><i>flesto_copy_items()</i> will not check if <span><i>dest_part</i> + <i>dest_offset</i> + <i>amount_of_items</i> * <i>item_size</i></span> (simplification) exceeds the last item of the <i>flesto</i>. If it does, the behavior is undefined.</h3>
+        <h3>This function cannot be used to copy data between different flestos.</h3>
+        <hr>
+        <h1 id="Return_value" class="al">Return value</h1>
+        <h3><i>flesto_copy_items()</i> does not return anything.</h3>
+        <hr>
+        <h1 id="Errors" class="al">Errors</h1>
+        <h3><i>flesto_copy_items()</i> always succeeds.</h3>
+      </div>
+    </section>
+  </body>
+</html>

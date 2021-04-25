@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>flesto_remove_empty_parts() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="/icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">flesto_remove_empty_parts()</th>
+          <th>
+            <a id="home" class="noul" href="/">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/flesto.h>
+
+int flesto_remove_empty_parts(struct flesto* <i>flesto</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>The <i>flesto_remove_empty_parts()</i> function shall free the contents of every part between <span><i>flesto</i>->max_amount_of_parts</span> and <span><i>flesto</i>->last_part</span>, even if the parts contain any data.</h3>
+        <hr>
+        <h1 id="Return_value" class="al">Return value</h1>
+        <h3><i>flesto_remove_empty_parts()</i> returns <span>flesto_success</span> on success, otherwise one of the error codes.</h3>
+        <hr>
+        <h1 id="Errors" class="al">Errors</h1>
+        <h3><span>flesto_out_of_memory</span> - an out of memory error has occured while shrinking the array of parts</h3>
+      </div>
+    </section>
+  </body>
+</html>

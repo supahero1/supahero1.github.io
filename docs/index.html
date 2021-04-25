@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Documentation</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="/icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">Documentation</th>
+          <th>
+            <a id="home" class="noul" href="/">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div class="card" onclick="location.href='/docs/install'">
+        <h1>Installation</h1>
+        <h3 class="ac">Available as either static or dynamic library.</h3>
+      </div>
+      <div class="card" onclick="location.href='/docs/flesto'">
+        <h1>Flesto</h1>
+        <h3 class="ac">Instead of keeping your data in one continuous array, which you will probably need to shrink and grow, manage multiple arrays as if they were one. Add and remove them whenever you want.</h3>
+      </div>
+      <div class="noent">
+        <h1>Mufex</h1>
+        <h3 class="ac">Coming soon! <span>Mu</span>tual <span>f</span>unction <span>ex</span>clusion. Specify which functions can run at the same time. No need to rewrite your code to use mutexes.</h3>
+      </div>
+      <div class="noent">
+        <h1>Time</h1>
+        <h3 class="ac">Coming soon! API to create timeouts, similarly to JavaScript. <span>Without</span> kernel calls<sup class="tiny">[1]</sup>, making code slower. <span>Without</span> endless threads for each timeout - only <span>one</span> for all.<br><span class="tiny light">[1] except calls fetching current time</span></h3>
+      </div>
+      <div class="noent">
+        <h1>AVL tree</h1>
+        <h3 class="ac">Coming soon! Highly optimised AVL tree, compatible with flesto, capable of holding <span>any</span> data using pointers. You only need to store it somewhere, leave the rest to the tree.</h3>
+      </div>
+      <div class="noent">
+        <h1>shnet</h1>
+        <h3 class="ac">Coming soon! This covers everything else not covered above. Create connections, manage them using high performance <a class="dark" target="_blank" rel="noopener noreferrer" href="https://man7.org/linux/man-pages/man7/epoll.7.html">epoll</a> and barely any threads. Tweak it to suit exactly what you need. <span>No</span> delaying using event loop - you instantly get notified if anything happens. <span>No</span> wack documentation - you exactly know which function returns what and can adapt your code to perfectly handle errors. Created with extensibility in mind - adding new protocols, such as <a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, should not be a big deal.</h3>
+      </div>
+    </section>
+  </body>
+</html>
