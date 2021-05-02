@@ -38,11 +38,12 @@
         <h3>8. <a class="ul" href="/docs/install/#Contributing">Contributing</a></h3>
         <hr>
         <h1 id="Requirements" class="al">1. Requirements</h1>
-        <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/">GCC compiler</a></h3>
-        <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/POSIX#POSIX-oriented_operating_systems">POSIX-compliant system</a><sup class="tiny dark">[1]</sup></h3>
+        <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/">GCC compiler</a><sup class="tiny dark">[1]</sup></h3>
+        <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/POSIX#POSIX-oriented_operating_systems">POSIX-compliant system</a><sup class="tiny dark">[2]</sup></h3>
         <h3><span>- </span><a class="dark" target="_blank" rel="noopener noreferrer" href="https://www.gnu.org/software/make/">GNU Make</a></h3>
-        <h3 class="tiny">[1] A few components might not require POSIX functions, such as <a href="/docs/flesto" class="tiny dark">flesto</a></h3>
-        <h3>You can test for <span class="dark">GCC</span> and <span class="dark">GNU Make</span> by typing in your terminal respectively <span class="boxed">gcc</span> and <span class="boxed">make</span>. The expected output of <span class="boxed">gcc</span> should be <span class="boxed">gcc: fatal error: no input files</span>. If the output is <span class="boxed">clang: error: no input files</span>, you either need to check your <span class="boxed">/usr/bin</span> folder for the existence of a working <span class="dark">GCC</span> compiler, or <a class="dark" target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=install+gcc+on+my+system">install it</a>. If you are really desperate, you can also try <a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/install/">building it</a> (but it takes hours).</h3>
+        <h3 class="tiny">[1] Some components might not require GCC extensions and built-ins</h3>
+        <h3 class="tiny">[2] Some components might not require POSIX functions</h3>
+        <h3>You can test for <span class="dark">GCC</span> and <span class="dark">GNU Make</span> by typing in your terminal <span class="boxed">gcc</span> and <span class="boxed">make</span> respectively. The expected output of <span class="boxed">gcc</span> is <span class="boxed">gcc: fatal error: no input files</span>. If the output is <span class="boxed">clang: error: no input files</span>, you either need to check your <span class="boxed">/usr/bin</span> folder for the existence of a working <span class="dark">GCC</span> compiler, or <a class="dark" target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=install+gcc+on+my+system">install it</a>. If you are really desperate, you can also try <a class="dark" target="_blank" rel="noopener noreferrer" href="https://gcc.gnu.org/install/">building it</a>, but it takes hours to do so.</h3>
         <hr>
         <h1 id="Getting_the_source_code" class="al">2. Getting the source code</h1>
         <h2>Manual download (recommended):</h2>
@@ -52,7 +53,7 @@
         <h3><a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Cd_(command)">CD</a> into any folder you like. Then, execute the following:</h3>
         <code>git clone https://github.com/supahero1/shnet</code>
         <h3>The source code will be saved to a folder called <span>shnet</span>.</h3>
-        <h3>The newest code does not mean stable nor capable of successfully passing all tests. Please consider using manual download to pick a stable release.</h3>
+        <h3>The newest code does not mean stable nor capable of successfully passing all tests or even compiling itself. Please consider using manual download to pick a stable release.</h3>
         <hr>
         <h1 id="Building" class="al">3. Building</h1>
         <h3>In the root folder (with <span>Makefile</span> in it), execute the following:</h3>
@@ -105,6 +106,7 @@
         <code>make test</code>
         <h3>In case of a test failure, more information can be found at the generated <span>logs.txt</span> file in the root folder.</h3>
         <h3>In order to make sure that the failure was not caused by random events, such as system calls returning an error caused not by the test suites, it is recommended to run tests again. The old <span>logs.txt</span> file will not be deleted.</h3>
+        <h3>Tests are primarily used in development and do not need to be ran by normal users.</h3>
         <hr>
         <h1 id="Contributing" class="al">8. Contributing</h1>
         <h3>If you find any bugs, typos, would like to suggest something or would like to help with the project, feel free to <a class="dark" target="_blank" rel="noopener noreferrer" href="https://github.com/supahero1/shnet/issues">submit an issue</a>.</h3>
