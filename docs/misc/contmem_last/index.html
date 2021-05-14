@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>contmem_last() | Docs</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="all">
+  </head>
+  <body>
+    <section id="top-bar">
+      <table>
+        <tr>
+          <th>
+            <img src="/icon.png" width="32" height="32">
+          </th>
+          <th>
+            <a id="name" class="noul" href="https://github.com/supahero1">Shädam</a>
+          </th>
+          <th id="title">contmem_last()</th>
+          <th>
+            <a id="home" class="noul" href="/">Home</a>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section id="page">
+      <div>
+        <h1 id="Synopsis" class="al">Synopsis</h1>
+        <pre class="code">
+#include &lt;shnet/misc.h>
+
+void* contmem_last(struct contmem* <i>contmem</i>);
+</pre>
+        <hr>
+        <h1 id="Description" class="al">Description</h1>
+        <h3>The <i>contmem_last()</i> function shall return pointer to the first unused (the end of the last used) item in the <i>contmem</i>. Never use it on your own - use <a class="dark" href="/docs/mics/contmem_get">contmem_get()</a> instead.</h3>
+        <hr>
+        <h1 id="Return_value" class="al">Return value</h1>
+        <h3><i>contmem_last()</i> returns pointer to the first unused item in the <i>contmem</i>. It always succeeds.</h3>
+      </div>
+    </section>
+  </body>
+</html>

@@ -27,13 +27,10 @@
       <div>
         <h1 id="Contents" class="al">Contents</h1>
         <h3>1. <a class="ul" href="/docs/misc/#Description">Description</a></h3>
-        <h3>2. <a class="ul" href="/docs/misc/#Specification">Specification</a></h3>
-        <h3>3. <a class="ul" href="/docs/misc/#Documentation">Documentation</a></h3>
+        <h3>2. <a class="ul" href="/docs/misc/#Documentation">Documentation</a></h3>
         <hr>
         <h1 id="Description" class="al">1. Description</h1>
         <h3>This module is a set of functions or sub-modules that do not deserve their own module.</h3>
-        <hr>
-        <h1 id="Specification" class="al">2. Specification</h1>
         <h2 id="Contmem">Contmem</h2>
         <h3>Continuous memory, or contmem for short, is an extension of the <a class="dark" href="/docs/avl">AVL tree</a> module. Since the tree works based on pointers, the code would need to waste incredible amount of time going through every node and adjusting pointers in case of <span>realloc</span> changing location of the memory.</h3>
         <h3>Contmem consists of <span>blocks</span>, which are just memory allocated using <span>malloc</span> with a little bit of metainformation included in them. If more memory is needed, new blocks are allocated and added to the whole, and if it is detected that we don't need a block anymore, it is disconnected and freed. Size of a block is adjustable, as well as the threshold (<span>tolerance</span> in the code) defining how many bytes must become free in order to free the last unused block (if there is any).</h3>
@@ -43,7 +40,7 @@
         <h3>Mutual function exclusion, or mufex for short, is an extension of the <a class="dark" href="/docs/avl">AVL tree</a> module. It was created, because of how AVL tree works in a multi-threaded environment - insert and delete functions cannot be safely executed along with other methods accessing a tree, because they change the state of the tree. Solution is fairly simple - just use a mutex to mutually exclude them. However, that creates a performance issue - what if we initiated a search, and another search would like to take place? Two or more searches are fine, because they don't change the tree in any way. To solve this issue, another mutex and a counter is used (in similar fashion to a semaphore, except this works backwards).</h3>
         <h3>There are many more situations like the one described above. Thus, to not keep writing the same code over and over again, this sub-module has been created.</h3>
         <hr>
-        <h1 id="Documentation" class="al">3. Documentation</h1>
+        <h1 id="Documentation" class="al">2. Documentation</h1>
         <h3>These functions are not thread-safe. If you need to run them in a multi-threaded environment, consider using a <a class="dark" href="/docs/misc#Mufex">mufex</a>.</h3>
         <h2>Contmem</h2>
         <h3 class="lm"><a href="/docs/misc/contmem">contmem()</a></h3>
