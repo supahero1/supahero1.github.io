@@ -28,21 +28,25 @@
         <h1>Installation</h1>
         <h3 class="ac">Available as either static or dynamic library.</h3>
       </div>
-      <div class="noent">
+      <div class="card" onoclick="location.href='/docs/heap'">
         <h1>Heap</h1>
-        <h3 class="ac">Forget about writing or using numerous versions of the same code just to support various data types. This heap will store <span>any</span> kind of data in either min or max mode. <span>You</span> specify how nodes should be compared.</h3>
+        <h3 class="ac">Forget about writing or using numerous versions of the same code just to support various data types. This heap will store <span>any</span> kind of data in either min or max mode. <span>You</span> specify what nodes are and how they should be compared.</h3>
       </div>
-      <div class="noent">
+      <div class="card" onoclick="location.href='/docs/avl'">
         <h1>AVL tree</h1>
-        <h3 class="ac">Coming soon! The same principles as above applied to an AVL tree.</h3>
+        <h3 class="ac">The principles above applied to an AVL tree.</h3>
       </div>
-      <div class="noent">
+      <div class="card" onoclick="location.href='/docs/time'">
         <h1>Time</h1>
-        <h3 class="ac">Coming soon! API to create timeouts, similarly to JavaScript. <span>Without</span> kernel calls<sup class="tiny">[1]</sup>, making code slower. <span>Without</span> endless threads for each timeout - only <span>one</span> for all.<br><span class="tiny light">[1] except calls fetching current time</span></h3>
+        <h3 class="ac">Create timeouts, get current time. <span>Without</span> kernel calls<sup class="tiny">[1]</sup>, making code slower. <span>Without</span> endless threads for each timeout - only <span>one</span> for all.<br><span class="tiny light">[1] except calls fetching current time</span></h3>
+      </div>
+      <div class="card" onoclick="location.href='/docs/misc'">
+        <h1>Miscellaneous</h1>
+        <h3 class="ac">Smaller projects that help with various things, or act as an extension of other projects.</h3>
       </div>
       <div class="noent">
         <h1>shnet</h1>
-        <h3 class="ac">Coming soon! This covers everything else not covered above. Create connections, manage them using high performance <a class="dark" target="_blank" rel="noopener noreferrer" href="https://man7.org/linux/man-pages/man7/epoll.7.html">epoll</a> and barely any threads. Tweak it to suit exactly what you need. <span>No</span> delaying using event loop - you instantly get notified if anything happens. <span>No</span> wack documentation - you exactly know which function returns what and can adapt your code to perfectly handle errors. Created with extensibility in mind - adding new protocols, such as <a class="dark" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, should not be a big deal.</h3>
+        <h3 class="ac">Coming soon! This covers everything else not covered above. Create connections, manage them using high performance <a class="dark" target="_blank" rel="noopener noreferrer" href="https://man7.org/linux/man-pages/man7/epoll.7.html">epoll</a> and barely any threads. Tweak it to suit exactly what you need.</h3>
       </div>
     </section>
   </body>
