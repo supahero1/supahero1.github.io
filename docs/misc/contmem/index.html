@@ -34,7 +34,7 @@ int contmem(struct contmem* <i>contmem</i>, unsigned long <i>max_items</i>,
 </pre>
         <hr>
         <h1 id="Description" class="al">Description</h1>
-        <h3>The <i>contmem()</i> function shall create a new <span>struct contmem</span>, initialise its members, and lastly store it at <i>contmem</i>. <i>max_items</i> specifies maximum size of a block, <i>item_size</i> specifies size of any object that will be stored in the structure. Memory requested by <a class="dark" href="/docs/mics/contmem_get">contmem_get()</a> will only be <i>item_size</i> bytes wide - using more than that results in undefined behavior.</h3>
+        <h3>The <i>contmem()</i> function shall create a new <span>struct contmem</span>, initialise its members, and lastly store it at <i>contmem</i>. <i>max_items</i> specifies maximum size of a block, <i>item_size</i> specifies size of any object that will be stored in the structure. Memory requested by <a class="dark" href="/docs/misc/contmem_get">contmem_get()</a> will only be <i>item_size</i> bytes wide - using more than that results in undefined behavior.</h3>
         <h3><i>tolerance</i> specifies how many bytes need to become unused in order to free the last unused block, if there is any. If it is 0, any unused block will be disgarded as soon as it becomes empty. If it is larger than 0, the structure will wait until <i>tolerance</i> bytes become free in the last used block. If it comes true, it will then check if there is any unused block after the last used one. If yes, it will free and remove it.</h3>
         <h3><i>contmem()</i> shall also allocate one block of memory.</h3>
         <hr>

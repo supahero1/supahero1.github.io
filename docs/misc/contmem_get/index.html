@@ -33,7 +33,7 @@ void* contmem_get(struct contmem* <i>contmem</i>);
 </pre>
         <hr>
         <h1 id="Description" class="al">Description</h1>
-        <h3>The <i>contmem_get()</i> function shall allocate a new block if necessary and then return a pointer to the first available free space in the structure. The free space will always be at the end (see <a class="dark" href="/docs/mics/contmem_pop">contmem_pop()</a>) and will have the size of <span><i>contmem</i>->item_size</span>. Using more than that results in undefined behavior.</h3>
+        <h3>The <i>contmem_get()</i> function shall allocate a new block if necessary and then return a pointer to the first available free space in the structure. The free space will always be at the end (see <a class="dark" href="/docs/misc/contmem_pop">contmem_pop()</a>) and will have the size of <span><i>contmem</i>->item_size</span>. Using more than that results in undefined behavior.</h3>
         <hr>
         <h1 id="Return_value" class="al">Return value</h1>
         <h3><i>contmem_get()</i> returns pointer to the requested memory, otherwise one of the return codes.</h3>
